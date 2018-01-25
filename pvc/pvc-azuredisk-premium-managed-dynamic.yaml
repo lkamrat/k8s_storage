@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-azuredisk-premium-managed-dynamic
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: sc-azuredisk-premium-managed-dynamic
+  resources:
+    requests:
+      storage: 10Gi

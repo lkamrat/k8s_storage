@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-azurefiles-std-static
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  azureFile:
+    secretName: k8sworkshop-static-sa-azure-secret
+    shareName: static-pv-example-01/redis-data
+    readOnly: false

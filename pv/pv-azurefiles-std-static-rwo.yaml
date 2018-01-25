@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-azurefiles-std-static-rwo
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: sc-azurefiles-std-static
+  azureFile:
+    secretName: k8sworkshop-static-sa-azure-secret
+    shareName: rwo-pvexample01
+    readOnly: false

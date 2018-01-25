@@ -1,0 +1,17 @@
+kubectl create -f sc-azuredisk-std-managed-dynamic.yaml
+
+Show the SC in K8s
+
+kubectl create -f pvc-azuredisk-std-managed-dynamic.yaml
+
+Show the managed disk created in k8sworkshopdynamic storage account
+
+Show the bound PVC & the dynamic PV in K8s
+
+kubectl create -f redis-azuredisk-std-pvc-dynamic-pod-01
+
+Show the Pod in K8s
+
+kubectl exec -it redis-azure-disk-std-pvc-dynamic-pod-01 -- bash
+
+echo "This is a k8s azuredisk demo" > /data/redis/workshop.txt

@@ -1,0 +1,17 @@
+Create "static-pv-example-01" share in "k8sworkshopstatic" storage account
+
+Create "redis-data" folder in this share
+
+kubectl create -f Dropbox/Temp/K8s-Workshop-Storage/Scenario_1_Existing_Azure_Files_Share_\(Static_PV\)/pv-azurefiles-std-static.yaml 
+
+Show the PV in K8s
+
+Create "redis-azure-files-std-pv-example-01-pod" Pod
+
+Show the Pod in K8s
+
+likamrat$ kubectl exec -it redis-azure-files-std-pv-example-01-pod -- bash
+
+echo "What's up doc?" > /data/redis/workshop.txt
+
+Download the file from the storage account and show it

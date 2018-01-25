@@ -1,0 +1,17 @@
+kubectl create -f sc-azurefiles-std-dynamic.yaml
+
+Show the SC in K8s
+
+kubectl create -f pvc-azurefiles-std-dynamic.yaml
+
+Show the bound PVC & the dynamic PV in K8s
+
+Show the share created in k8sworkshopdynamic storage account
+
+kubectl create -f redis-azure-files-std-pvc-example-01-pod.yaml
+
+Show the Pod in K8s
+
+kubectl exec -it redis-azure-files-std-pvc-example-01-pod -- bash
+
+Download the file from the storage account and show it

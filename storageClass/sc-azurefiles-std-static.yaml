@@ -1,0 +1,9 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-azurefiles-std-static
+provisioner: kubernetes.io/azure-file
+parameters:
+  skuName: Standard_LRS
+  location: westeurope
+  storageAccount: k8sworkshopstatic

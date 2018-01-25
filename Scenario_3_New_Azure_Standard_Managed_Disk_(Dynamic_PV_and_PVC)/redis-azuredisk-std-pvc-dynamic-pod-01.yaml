@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-azure-disk-std-pvc-dynamic-pod-01
+spec:
+  containers:
+  - name: redis
+    image: redis
+    volumeMounts:
+    - name: managed-std
+      mountPath: /data/redis
+  volumes:
+  - name: managed-std
+    persistentVolumeClaim:
+        claimName: pvc-azuredisk-std-managed-dynamic

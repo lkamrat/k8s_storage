@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-azure-files-std-pv-example-01-pod
+spec:
+  containers:
+  - name: redis
+    image: redis
+    volumeMounts:
+    - name: k8sworkshopstatic
+      mountPath: /data/redis
+  volumes:
+    - name: k8sworkshopstatic
+      azureFile:
+        secretName: k8sworkshop-static-sa-azure-secret
+        shareName: static-pv-example-01/redis-data
+        readOnly: false          
